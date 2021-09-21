@@ -18,7 +18,8 @@ paths:
           description: "200 response"
       x-amazon-apigateway-integration:
         httpMethod: "POST"
-        uri: "https://delegator.myrundeck.com/api/40/webhook/32IpSPbD5S6apW2rcwJb3Y2USoEXxcgx"
+        #Replace this URI with your Rundeck API endpoint
+        uri: "https://delegator.myrundeck.com/api/40/webhook/abcdefghijklmnopqrstuvwxyz"
         responses:
           default:
             statusCode: "200"
