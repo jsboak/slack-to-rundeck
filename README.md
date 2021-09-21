@@ -15,4 +15,6 @@ This will forward the Slack "slash commands" (or "Interactive Components") to yo
 Here's an example payload from Slack:
 <img width="1347" alt="Screen Shot 2021-09-21 at 1 30 49 PM" src="https://user-images.githubusercontent.com/11511251/134228024-ab82799a-8037-427f-b3bc-85e545d8ca0c.png">
 
-Import the `sample_rundeck_job.yaml` to Rundeck to see an example of how to transpose the Slack slash-command text into job options.
+Import the `sample_rundeck_job.yaml` to Rundeck to see an example of how to transpose the Slack slash-command text into job options. 
+This is what the corresponding slash command would look like for this sample job:
+<img width="595" alt="Screen Shot 2021-09-21 at 1 57 45 PM" src="https://user-images.githubusercontent.com/11511251/134231249-ffea60e2-a215-4c5b-bffc-ddbc1021b55c.png">
