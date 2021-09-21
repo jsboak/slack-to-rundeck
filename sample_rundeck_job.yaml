@@ -1,0 +1,48 @@
+- defaultTab: nodes
+  description: ''
+  executionEnabled: true
+  id: 980a6688-b8fa-4f75-8d40-50aeaea842d7
+  loglevel: INFO
+  name: Slack Slash Command Parser
+  nodeFilterEditable: false
+  options:
+  - label: Slack Webhook Text
+    name: slack_webhook_text
+    value: 'vm_name=my-new-vm, number_of_cores=4, gb_of_memory=32, gb_of_disk=100,
+      region=us-wes-1'
+  plugins:
+    ExecutionLifecycle: {}
+  scheduleEnabled: true
+  schedules: []
+  sequence:
+    commands:
+    - description: parse
+      fileExtension: py
+      interpreterArgsQuoted: false
+      plugins:
+        LogFilter:
+        - config:
+            invalidKeyPattern: \s|\$|\{|\}|\\
+            logData: 'true'
+            regex: (.*)=(.*)
+          type: key-value-data
+      script: "options_input = str(\"@option.slack_webhook_text@\").replace(\", \"\
+        , \",\").split(\",\")\n\nfor option in options_input:\n    \n    print(option)"
+      scriptInterpreter: python3
+    - configuration:
+        command: echo ${data.type_name}
+      description: Print type input option
+      nodeStep: true
+      type: localexec
+    - description: Build New VM
+      jobref:
+        args: -vm_name ${data.vm_name*} -number_of_cores ${data.number_of_cores*}
+          -gb_of_memory ${data.gb_of_memory*} -gb_of_disk ${data.gb_of_disk*} -region
+          ${data.region*}
+        failOnDisable: true
+        group: Azure Provisioning
+        name: Provision Azure Infrastructure
+        uuid: 8e006719-acf2-4549-9028-4c7f704fc064
+    keepgoing: false
+    strategy: node-first
+  uuid: 980a6688-b8fa-4f75-8d40-50aeaea842d7
