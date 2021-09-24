@@ -17,4 +17,7 @@ Here's an example payload from Slack:
 
 Import the `sample_rundeck_job.yaml` to Rundeck to see an example of how to transpose the Slack slash-command text into job options. 
 This is what the corresponding slash command would look like for this sample job:
-<img width="595" alt="Screen Shot 2021-09-21 at 1 57 45 PM" src="https://user-images.githubusercontent.com/11511251/134231249-ffea60e2-a215-4c5b-bffc-ddbc1021b55c.png">
+
+<img width="595" alt="Screen Shot 2021-09-23 at 5 09 37 PM" src="https://user-images.githubusercontent.com/11511251/134599523-8f228535-e568-46eb-b6ba-fc790b45ea24.png">
+
+<img width="605" alt="Screen Shot 2021-09-23 at 5 10 18 PM" src="https://user-images.githubusercontent.com/11511251/134599527-96c59199-8000-4d5e-b119-080134aa773e.png">
